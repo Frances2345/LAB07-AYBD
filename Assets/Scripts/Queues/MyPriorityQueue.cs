@@ -4,7 +4,7 @@ public class MyPriorityQueue
 {
     public List<Entity> elements = new List<Entity>();
 
-    public void Insert(Entity newEntity)
+    public void Insert(Entity newEntity, bool sortBySpeed)
     {
         if (elements.Count == 0)
         {
@@ -16,13 +16,24 @@ public class MyPriorityQueue
 
         for (int i = 0; i < elements.Count; i++)
         {
-            if (newEntity.stats.speed > elements[i].stats.speed)
+            bool hasPriority = false;
+            if (sortBySpeed)
+            {
+                hasPriority = newEntity.stats.speed > elements[i].stats.speed;
+            }
+            else 
+            {
+                hasPriority = newEntity.stats.id < elements[i].stats.id;
+            }
+
+            if (hasPriority)
             {
                 elements.Insert(i, newEntity);
                 inserted = true;
                 break;
             }
         }
+
 
         if (!inserted)
         {
