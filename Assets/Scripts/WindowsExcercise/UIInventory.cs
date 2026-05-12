@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class UIInventory : MonoBehaviour
 {
-    public InvetoryData data;
     void Start()
     {
         
