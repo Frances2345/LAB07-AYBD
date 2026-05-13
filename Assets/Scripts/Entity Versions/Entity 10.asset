@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BaseStats
   entityName: Zoro
   id: 50
-  speed: 65
+  speed: 70
